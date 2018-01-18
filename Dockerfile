@@ -15,11 +15,10 @@ RUN  apt-get update -qqy \
 # Python 3.5 installation
 #=====
 
-RUN  apt-get install -qqy software-properties-common python-software-properties \
+RUN  apt-get install -qqy software-properties-common \
+  && add-apt-repository ppa:deadsnakes/ppa \
   && apt-get update -qqy \
-  && add-apt-repository ppa:fkrull/deadsnakes \
-  && apt-get update -qqy \
-  && apt-get install -qqy python3.5
+  && apt-get install -qqy python3.6
 
 #=====
 # Pip 3 installation
@@ -35,4 +34,5 @@ RUN  pip3 install --upgrade appdirs \
   && pip3 install --upgrade selenium \
   && pip3 install --upgrade pymysql \
   && pip3 install --upgrade browsermob-proxy \
-  && pip3 install --upgrade pysftp
+  && pip3 install --upgrade pysftp \
+  && pip3 install --upgrade webdriver_manager
