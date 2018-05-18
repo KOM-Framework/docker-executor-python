@@ -12,10 +12,11 @@ RUN  apt-get update -qqy \
   && echo 'JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"' >> /etc/environment
 
 #=====
-# Python 3.5 installation
+# Python 3.6 installation
 #=====
 
 RUN  apt-get install -qqy software-properties-common \
+  && apt-get update -qqy \  
   && add-apt-repository ppa:deadsnakes/ppa \
   && apt-get update -qqy \
   && apt-get install -qqy python3.6
@@ -23,16 +24,18 @@ RUN  apt-get install -qqy software-properties-common \
 #=====
 # Pip 3 installation
 #=====
-RUN  apt-get install -qqy python3-pip --upgrade \
-  && pip3 install --upgrade pip
+RUN  apt install wget \
+  && wget https://bootstrap.pypa.io/get-pip.py \
+  && python3.6 get-pip.py
 
 #=====
 # Python libraries installation required for framework execution
 #=====
-RUN  pip3 install --upgrade appdirs \
-  && pip3 install --upgrade allure-pytest \
-  && pip3 install --upgrade selenium \
-  && pip3 install --upgrade pymysql \
-  && pip3 install --upgrade browsermob-proxy \
-  && pip3 install --upgrade pysftp \
-  && pip3 install --upgrade webdriver_manager
+RUN  python3.6 -m pip install pytest \
+  && python3.6 -m pip install appdirs \
+  && python3.6 -m pip install allure-pytest \
+  && python3.6 -m pip install selenium \
+  && python3.6 -m pip install pymysql \
+  && python3.6 -m pip install browsermob-proxy \
+  && python3.6 -m pip install pysftp
+
