@@ -4,6 +4,12 @@ MAINTAINER Oleh Kuzovkov <oleh@thirdshelf.com>
 USER root
 
 #=====
+# Git installation
+#=====
+RUN apt-get update -qqy \
+ && apt-get install git-core -qqy
+
+#=====
 # JAVA JDK installation
 #=====
 RUN  apt-get update -qqy \
@@ -31,6 +37,7 @@ RUN  apt install wget \
 #=====
 # Python libraries installation required for framework execution
 #=====
+COPY flaky /usr/local/flaky
 RUN  python3.6 -m pip install pytest \
   && python3.6 -m pip install appdirs \
   && python3.6 -m pip install allure-pytest \
@@ -38,4 +45,3 @@ RUN  python3.6 -m pip install pytest \
   && python3.6 -m pip install pymysql \
   && python3.6 -m pip install browsermob-proxy \
   && python3.6 -m pip install pysftp
-
