@@ -37,8 +37,8 @@ RUN  apt install wget \
 #=====
 # Python libraries installation required for framework execution
 #=====
-COPY flaky /usr/local/flaky
 RUN  python3.6 -m pip install pytest \
+  && python3.6 -m pip install pytest-xdist \
   && python3.6 -m pip install appdirs \
   && python3.6 -m pip install allure-pytest \
   && python3.6 -m pip install selenium \
