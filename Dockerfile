@@ -44,4 +44,5 @@ RUN  python3.6 -m pip install pytest \
   && python3.6 -m pip install selenium \
   && python3.6 -m pip install pymysql \
   && python3.6 -m pip install browsermob-proxy \
-  && python3.6 -m pip install pysftp
+  && python3.6 -m pip install pysftp \
+  && python3.6 -m pip install pyjwt
