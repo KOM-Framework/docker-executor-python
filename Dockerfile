@@ -39,6 +39,7 @@ RUN  apt install wget \
 #=====
 RUN  python3.6 -m pip install pytest \
   && python3.6 -m pip install pytest-xdist \
+  && python3.6 -m pip install pytest-rerunfailures \
   && python3.6 -m pip install appdirs \
   && python3.6 -m pip install allure-pytest \
   && python3.6 -m pip install selenium \
