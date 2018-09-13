@@ -50,6 +50,6 @@ RUN  python3.6 -m pip install pytest \
 #=====
 # Installing pytest-rerunfailures
 #=====
-RUN  git clone --single-branch -b "#64-issue-fix" https://github.com/OlegKuzovkov/pytest-rerunfailures.git \
+RUN  git clone --single-branch -b "my-master" https://github.com/OlegKuzovkov/pytest-rerunfailures.git \
   && cd pytest-rerunfailures \
   && python3.6 setup.py install
