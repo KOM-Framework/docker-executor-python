@@ -44,4 +44,5 @@ RUN  python3.8 -m pip install pytest \
   && python3.8 -m pip install pymysql \
   && python3.8 -m pip install browsermob-proxy \
   && python3.8 -m pip install pysftp \
-  && python3.8 -m pip install pyjwt
+  && python3.8 -m pip install pyjwt \
+  && python3.8 -m pip install docker
