@@ -9,6 +9,12 @@ USER root
 RUN apt-get update -qqy \
  && apt-get install git-core -qqy
 
+#=====
+# Wget installation
+#=====
+RUN apt-get update -qqy \
+ && apt-get install wget -qqy
+
 ##=====
 ## JAVA JDK installation
 ##=====
@@ -45,4 +51,7 @@ RUN  python3.8 -m pip install pytest \
   && python3.8 -m pip install browsermob-proxy \
   && python3.8 -m pip install pysftp \
   && python3.8 -m pip install pyjwt \
-  && python3.8 -m pip install docker
+  && python3.8 -m pip install docker \
+  && python3.8 -m pip install pandas \
+  && python3.8 -m pip install xlrd \
+  && python3.8 -m pip install jira
