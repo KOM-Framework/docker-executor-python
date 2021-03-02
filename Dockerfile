@@ -41,7 +41,8 @@ RUN apt-get install python3-pip -qqy
 #=====
 # Python libraries installation required for the execution
 #=====
-RUN  python3.8 -m pip install pytest \
+RUN python3.8 -m pip install --upgrade pip \
+  && python3.8 -m pip install pytest \
   && python3.8 -m pip install pytest-xdist \
   && python3.8 -m pip install pytest-rerunfailures \
   && python3.8 -m pip install appdirs \
@@ -54,4 +55,6 @@ RUN  python3.8 -m pip install pytest \
   && python3.8 -m pip install docker \
   && python3.8 -m pip install pandas \
   && python3.8 -m pip install xlrd \
-  && python3.8 -m pip install jira
+  && python3.8 -m pip install jira \
+  && python3.8 -m pip install openpyxl \
+  && python3.8 -m pip install psutil
